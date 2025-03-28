@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Chat  APP</h3>
+    <script src="/socket.io/socket.io.js"></script>
+
+        <input placeholder="enter a message" id="messageInput" type="text">
+        <button id="Submitbtn">Send</button>
+        <p id="messageList"></p>
+    
+    <script>
+        const socket = io();
+        const messageInput = document.getElementById("messageInput")
+        const Submitbtn = document.getElementById("Submitbtn")
+        Submitbtn.addEventListener("click" , (event)=> {
+            
+            const message = messageInput.value;
+            // to send this message i.e emit we can do socket.emit
+            socket.emit("user message",message)
+        });
+        // after the message is coming from io.emit it is sent to all 
+        socket.on("message",(message) => {
+            console.log(message);
+            const p = document.getElementById("messageList");
+            const x = document.createElement('p')
+            x.innerText = message;
+            p.appendChild(x);
+        })
+    </script>
+</body>
+</html>
