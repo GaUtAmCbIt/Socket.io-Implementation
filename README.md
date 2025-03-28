@@ -1,6 +1,9 @@
-Socket.io Implementation 🚀
-A simple real-time communication project using Node.js, Express, and Socket.io. This implementation showcases how WebSockets enable bi-directional communication between clients and the server.
+# 🚀 Socket.io Implementation  
 
+A simple real-time communication project using **Node.js, Express, and Socket.io**.  
+This implementation showcases how **WebSockets enable bi-directional communication** between clients and the server.  
+
+---
 📌 Features
 Uses http.createServer to handle requests.
 
